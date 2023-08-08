@@ -1,4 +1,4 @@
-<svg host="65bd71144e" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="1201px" height="582px" viewBox="-0.5 -0.5 1201 582" content="&lt;mxfile&gt;&lt;diagram id=&quot;_KlTPeI5R1qHFAGSOktZ&quot; name=&quot;Clean Architecture&quot;&gt;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&lt;/diagram&gt;&lt;/mxfile&gt;">
+<svg host="65bd71144e" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="1201px" height="581px" viewBox="-0.5 -0.5 1201 581" content="&lt;mxfile&gt;&lt;diagram id=&quot;_KlTPeI5R1qHFAGSOktZ&quot; name=&quot;Clean Architecture&quot;&gt;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&lt;/diagram&gt;&lt;/mxfile&gt;">
     <defs>
         <linearGradient x1="0%" y1="0%" x2="0%" y2="100%" id="mx-gradient-f8cecc-1-d5e8d4-1-s-0">
             <stop offset="0%" style="stop-color: rgb(248, 206, 204); stop-opacity: 1;"/>
@@ -155,8 +155,8 @@
                 </text>
             </switch>
         </g>
-        <path d="M 1010 445 C 1010 436.72 1023.43 430 1040 430 C 1047.96 430 1055.59 431.58 1061.21 434.39 C 1066.84 437.21 1070 441.02 1070 445 L 1070 495 C 1070 498.98 1066.84 502.79 1061.21 505.61 C 1055.59 508.42 1047.96 510 1040 510 C 1023.43 510 1010 503.28 1010 495 Z" fill="#dae8fc" stroke="#6c8ebf" stroke-miterlimit="10" pointer-events="all"/>
-        <path d="M 1070 445 C 1070 448.98 1066.84 452.79 1061.21 455.61 C 1055.59 458.42 1047.96 460 1040 460 C 1023.43 460 1010 453.28 1010 445" fill="none" stroke="#6c8ebf" stroke-miterlimit="10" pointer-events="all"/>
+        <path d="M 1010 445 C 1010 436.72 1023.43 430 1040 430 C 1047.96 430 1055.59 431.58 1061.21 434.39 C 1066.84 437.21 1070 441.02 1070 445 L 1070 495 C 1070 503.28 1056.57 510 1040 510 C 1023.43 510 1010 503.28 1010 495 Z" fill="#dae8fc" stroke="#6c8ebf" stroke-miterlimit="10" pointer-events="all"/>
+        <path d="M 1070 445 C 1070 453.28 1056.57 460 1040 460 C 1023.43 460 1010 453.28 1010 445" fill="none" stroke="#6c8ebf" stroke-miterlimit="10" pointer-events="all"/>
         <g transform="translate(-0.5 -0.5)">
             <switch>
                 <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
@@ -175,8 +175,8 @@
                 </text>
             </switch>
         </g>
-        <path d="M 1090 445 C 1090 436.72 1103.43 430 1120 430 C 1127.96 430 1135.59 431.58 1141.21 434.39 C 1146.84 437.21 1150 441.02 1150 445 L 1150 495 C 1150 498.98 1146.84 502.79 1141.21 505.61 C 1135.59 508.42 1127.96 510 1120 510 C 1103.43 510 1090 503.28 1090 495 Z" fill="#dae8fc" stroke="#6c8ebf" stroke-miterlimit="10" pointer-events="all"/>
-        <path d="M 1150 445 C 1150 448.98 1146.84 452.79 1141.21 455.61 C 1135.59 458.42 1127.96 460 1120 460 C 1103.43 460 1090 453.28 1090 445" fill="none" stroke="#6c8ebf" stroke-miterlimit="10" pointer-events="all"/>
+        <path d="M 1090 445 C 1090 436.72 1103.43 430 1120 430 C 1127.96 430 1135.59 431.58 1141.21 434.39 C 1146.84 437.21 1150 441.02 1150 445 L 1150 495 C 1150 503.28 1136.57 510 1120 510 C 1103.43 510 1090 503.28 1090 495 Z" fill="#dae8fc" stroke="#6c8ebf" stroke-miterlimit="10" pointer-events="all"/>
+        <path d="M 1150 445 C 1150 453.28 1136.57 460 1120 460 C 1103.43 460 1090 453.28 1090 445" fill="none" stroke="#6c8ebf" stroke-miterlimit="10" pointer-events="all"/>
         <g transform="translate(-0.5 -0.5)">
             <switch>
                 <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
@@ -265,13 +265,13 @@
                     <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 118px; height: 1px; padding-top: 340px; margin-left: 281px;">
                         <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
                             <div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
-                                Controller
+                                Handler / Controller
                             </div>
                         </div>
                     </div>
                 </foreignObject>
                 <text x="340" y="344" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="12px" text-anchor="middle">
-                    Controller
+                    Handler / Controller
                 </text>
             </switch>
         </g>
@@ -316,7 +316,7 @@
             </switch>
         </g>
         <rect x="660" y="400" width="80" height="40" fill="url(#mx-gradient-f8cecc-1-d5e8d4-1-s-0)" stroke="#330000" transform="rotate(-90,700,420)" pointer-events="all"/>
-        <g transform="translate(-0.5 -0.5)rotate(-90 700 419.9999999999999)">
+        <g transform="translate(-0.5 -0.5)rotate(-90 700 420)">
             <switch>
                 <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
                     <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 78px; height: 1px; padding-top: 420px; margin-left: 661px;">
@@ -333,7 +333,7 @@
             </switch>
         </g>
         <rect x="380" y="400" width="240" height="40" fill="url(#mx-gradient-d5e8d4-1-f8cecc-1-s-0)" stroke="rgb(0, 0, 0)" transform="rotate(-90,500,420)" pointer-events="all"/>
-        <g transform="translate(-0.5 -0.5)rotate(-90 500 419.9999999999999)">
+        <g transform="translate(-0.5 -0.5)rotate(-90 500 420)">
             <switch>
                 <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
                     <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 238px; height: 1px; padding-top: 420px; margin-left: 381px;">
@@ -431,7 +431,7 @@
             </switch>
         </g>
         <rect x="880" y="400" width="80" height="40" fill="url(#mx-gradient-d6e8d4-1-dbe9fc-1-s-0)" stroke="#330000" transform="rotate(-90,920,420)" pointer-events="all"/>
-        <g transform="translate(-0.5 -0.5)rotate(-90 920 419.9999999999999)">
+        <g transform="translate(-0.5 -0.5)rotate(-90 920 420)">
             <switch>
                 <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
                     <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 78px; height: 1px; padding-top: 420px; margin-left: 881px;">
