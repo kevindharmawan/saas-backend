@@ -1,0 +1,26 @@
+# Mockery config >= v2.23.4
+
+filename: "mock_{{.InterfaceName}}.go"
+dir: "mocks/{{.PackagePath}}"
+mockname: "Mock{{.InterfaceName}}"
+outpkg: "{{.PackageName}}"
+inpackage: false
+packages:
+  github.com/kevindharmawan/saas-backend/internal/feature/auth:
+    interfaces:
+      AuthRepository:
+      HashRepository:
+      ValidationRepository:
+      TokenRepository:
+      ValidationService:
+      AuthService:
+
+  github.com/kevindharmawan/saas-backend/internal/feature/payment:
+    interfaces:
+      PaymentRepository:
+      PaymentService:
+
+  github.com/kevindharmawan/saas-backend/internal/feature/user:
+    interfaces:
+      UserRepository:
+      UserService:
