@@ -1,11 +1,18 @@
 package user
 
-import "github.com/kevindharmawan/saas-backend/internal/model"
+import (
+	"github.com/kevindharmawan/saas-backend/internal/model"
+	"gorm.io/gorm"
+)
 
-type userRepositoryImpl struct{}
+type userRepositoryImpl struct {
+	db *gorm.DB
+}
 
-func NewUserRepository() UserRepository {
-	return &userRepositoryImpl{}
+func NewUserRepository(db *gorm.DB) UserRepository {
+	return &userRepositoryImpl{
+		db: db,
+	}
 }
 
 func (r *userRepositoryImpl) CreateUser(user *model.User) (*model.User, *model.AppError) {

@@ -11,7 +11,7 @@ import (
 	"github.com/kevindharmawan/saas-backend/internal/feature/user"
 )
 
-func InitApi(
+func InitializeApi(
 	host string,
 	port int,
 	authService auth.AuthService,
@@ -19,7 +19,7 @@ func InitApi(
 	paymentService payment.PaymentService,
 ) *http.Server {
 	corsMiddleware := middleware.NewCorsMiddleware()
-	authMiddleware := middleware.NewAuthMiddleware(authService)
+	authMiddleware := middleware.NewAuthMiddleware(authService, userService)
 
 	authHandler := auth.NewAuthHandler(authService)
 	userHandler := user.NewUserHandler(userService)
@@ -27,7 +27,7 @@ func InitApi(
 
 	return &http.Server{
 		Addr: fmt.Sprintf("%v:%d", host, port),
-		Handler: InitRouter(
+		Handler: InitializeRouter(
 			corsMiddleware,
 			authMiddleware,
 			authHandler,

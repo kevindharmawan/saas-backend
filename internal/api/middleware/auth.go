@@ -5,16 +5,24 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/kevindharmawan/saas-backend/internal/feature/auth"
+	"github.com/kevindharmawan/saas-backend/internal/feature/user"
+	"github.com/kevindharmawan/saas-backend/internal/model"
 	"github.com/kevindharmawan/saas-backend/internal/shared/constant"
+	"github.com/kevindharmawan/saas-backend/internal/shared/dto"
 )
 
 type AuthMiddleware struct {
-	validateService auth.ValidationService
+	validationService auth.ValidationService
+	userService       user.UserService
 }
 
-func NewAuthMiddleware(vs auth.ValidationService) *AuthMiddleware {
+func NewAuthMiddleware(
+	validationService auth.ValidationService,
+	userService user.UserService,
+) *AuthMiddleware {
 	return &AuthMiddleware{
-		validateService: vs,
+		validationService: validationService,
+		userService:       userService,
 	}
 }
 
@@ -24,19 +32,25 @@ func (am *AuthMiddleware) AuthMiddleware(c *gin.Context) {
 	token := strings.TrimSpace(strings.Replace(authorizationToken, "Bearer", "", 1))
 
 	if token == "" {
-		c.Set(constant.IsAuthenticatedKey, false)
-		c.Next()
+		err := model.NewUnauthorizedError(false)
+		dto.SendErrorResponse(c, err)
 		return
 	}
 
-	authId, err := am.validateService.ValidateToken(token)
+	authId, err := am.validationService.ValidateToken(token)
 	if err != nil {
-		c.Set(constant.IsAuthenticatedKey, false)
-		c.Next()
+		dto.SendErrorResponse(c, err)
 		return
 	}
 
-	c.Set(constant.IsAuthenticatedKey, true)
-	c.Set(constant.UserAuthIdKey, authId)
+	user, err := am.userService.GetUserByAuthId(authId)
+	if err != nil {
+		dto.SendErrorResponse(c, err)
+		return
+	}
+
+	c.Set(constant.UserIdKey, user.ID)
+	c.Set(constant.UserAuthIdKey, user.AuthID)
+	c.Set(constant.UserCustomerIdKey, user.CustomerID)
 	c.Next()
 }

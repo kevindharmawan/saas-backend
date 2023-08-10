@@ -6,6 +6,7 @@ import (
 	"github.com/kevindharmawan/saas-backend/internal/feature/auth"
 	"github.com/kevindharmawan/saas-backend/internal/feature/payment"
 	"github.com/kevindharmawan/saas-backend/internal/feature/user"
+	"github.com/kevindharmawan/saas-backend/internal/pkg"
 	"github.com/kevindharmawan/saas-backend/internal/shared/config"
 )
 
@@ -26,21 +27,26 @@ func main() {
 		panic(err)
 	}
 
-	// TODO: Create data sources
+	// Create data sources
+	pkg.InitializeStripe(c.Stripe)
+	db, err := pkg.InitializeSqlite(c.Database)
+	if err != nil {
+		panic(err)
+	}
 
 	// Create repositories
-	authRepo := auth.NewAuthRepository()
+	authRepo := auth.NewAuthRepository(db)
 	hashRepo := auth.NewHashRepository()
 	tokenRepo := auth.NewTokenRepository()
-	userRepo := user.NewUserRepository()
+	userRepo := user.NewUserRepository(db)
 	paymentRepo := payment.NewPaymentRepository()
 
 	// Create services
-	authService := auth.NewAuthService(authRepo, hashRepo, tokenRepo)
+	authService := auth.NewAuthService(authRepo, hashRepo, tokenRepo, userRepo)
 	userService := user.NewUserService(userRepo)
 	paymentService := payment.NewPaymentService(paymentRepo)
 
-	s := api.InitApi("", c.Server.Port, authService, userService, paymentService)
+	s := api.InitializeApi("", c.Server.Port, authService, userService, paymentService)
 
 	if err := s.ListenAndServe(); err != nil {
 		panic(err)

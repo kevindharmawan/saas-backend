@@ -1,6 +1,7 @@
 package constant
 
 const (
-	IsAuthenticatedKey = "is_authenticated"
-	UserAuthIdKey      = "user_auth_id"
+	UserIdKey         = "user_id"
+	UserAuthIdKey     = "user_auth_id"
+	UserCustomerIdKey = "user_customer_id"
 )

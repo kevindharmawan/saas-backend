@@ -8,7 +8,7 @@ import (
 	"github.com/kevindharmawan/saas-backend/internal/feature/user"
 )
 
-func InitRouter(
+func InitializeRouter(
 	corsMiddleware *middleware.CorsMiddleware,
 	authMiddleware *middleware.AuthMiddleware,
 	authHandler *auth.AuthHandler,
@@ -19,7 +19,6 @@ func InitRouter(
 
 	apiRoute := app.Group("/api")
 	apiRoute.Use(corsMiddleware.CorsMiddleware)
-	apiRoute.Use(authMiddleware.AuthMiddleware)
 	{
 		apiRoute.GET("/ping", func(c *gin.Context) {
 			c.JSON(200, gin.H{
@@ -28,9 +27,38 @@ func InitRouter(
 		})
 	}
 
-	// router.AuthRouter(apiRoute, as)
-	// router.UserRouter(apiRoute, us)
-	// router.CardRouter(apiRoute, ps, us)
+	authRoute := apiRoute.Group("/auth")
+	{
+		authRoute.POST("/signin", authHandler.SignIn)
+		authRoute.POST("/signup", authHandler.SignUp)
+	}
+
+	userRoute := apiRoute.Group("/user")
+	userRoute.Use(authMiddleware.AuthMiddleware)
+	{
+		userRoute.GET("", userHandler.GetCurrentUser)
+		userRoute.PUT("", userHandler.UpdateUser)
+		userRoute.DELETE("", userHandler.DeleteUser)
+	}
+
+	paymentRoute := apiRoute.Group("/payment")
+	paymentRoute.Use(authMiddleware.AuthMiddleware)
+	{
+		cardRoute := paymentRoute.Group("/card")
+		{
+			cardRoute.GET("/card", paymentHandler.GetCreditCards)
+			cardRoute.POST("/card", paymentHandler.AddCreditCard)
+			cardRoute.DELETE("/card/:cardId", paymentHandler.RemoveCreditCard)
+			cardRoute.PUT("/card/:cardId", paymentHandler.SetDefaultCreditCard)
+		}
+
+		subscriptionRoute := paymentRoute.Group("/subscription")
+		{
+			subscriptionRoute.GET("", paymentHandler.GetSubscriptionInfo)
+			subscriptionRoute.POST("", paymentHandler.Subscribe)
+			subscriptionRoute.DELETE("", paymentHandler.CancelSubscription)
+		}
+	}
 
 	return app
 }

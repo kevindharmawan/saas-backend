@@ -11,3 +11,7 @@ func NewTokenRepository() TokenRepository {
 func (r *tokenRepositoryImpl) CreateToken(authId int64) (*model.Token, *model.AppError) {
 	return nil, model.NewInternalServerError()
 }
+
+func (r *tokenRepositoryImpl) ValidateToken(token string) (int64, *model.AppError) {
+	return 0, model.NewInternalServerError()
+}

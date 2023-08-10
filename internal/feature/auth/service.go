@@ -1,25 +1,30 @@
 package auth
 
-import "github.com/kevindharmawan/saas-backend/internal/model"
+import (
+	"github.com/kevindharmawan/saas-backend/internal/feature/user"
+	"github.com/kevindharmawan/saas-backend/internal/model"
+)
 
 // TODO: Add verification feature.
 // TODO: Check if email is in correct format
 type authServiceImpl struct {
-	authRepository       AuthRepository
-	hashRepository       HashRepository
-	tokenRepository      TokenRepository
-	validationRepository ValidationRepository
+	authRepository  AuthRepository
+	hashRepository  HashRepository
+	tokenRepository TokenRepository
+	userRepository  user.UserRepository
 }
 
 func NewAuthService(
 	authRepository AuthRepository,
 	hashRepository HashRepository,
 	tokenRepository TokenRepository,
+	userRepository user.UserRepository,
 ) AuthService {
 	return &authServiceImpl{
-		authRepository:       authRepository,
-		hashRepository:       hashRepository,
-		tokenRepository:      tokenRepository,
+		authRepository:  authRepository,
+		hashRepository:  hashRepository,
+		tokenRepository: tokenRepository,
+		userRepository:  userRepository,
 	}
 }
 

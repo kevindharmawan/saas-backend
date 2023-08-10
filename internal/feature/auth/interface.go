@@ -12,12 +12,13 @@ type HashRepository interface {
 	MatchHashAndString(hashedStr string, str string) (bool, *model.AppError)
 }
 
-type TokenRepository interface {
-	CreateToken(authId int64) (*model.Token, *model.AppError)
-}
-
 type ValidationRepository interface {
 	ValidateToken(token string) (int64, *model.AppError)
+}
+
+type TokenRepository interface {
+	ValidationRepository
+	CreateToken(authId int64) (*model.Token, *model.AppError)
 }
 
 type ValidationService interface {
